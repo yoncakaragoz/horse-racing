@@ -1,0 +1,43 @@
+<header class="app-header panel">
+  <div class="title">
+    <h1 class="h1">Horse Racing</h1>
+    <div class="controls-overlay d-flex justify-content-center align-items-center">
+      <app-control-panel
+        [running]="running()"
+        [paused]="paused()"
+        [canStart]="!!activeRound()"
+        (generate)="generateGame()"
+        (start)="startRace()"
+        (pause)="pause()"
+        (resume)="resume()"
+        (reset)="reset()">
+      </app-control-panel>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="left panel">
+    <h3 class="h2">Horse List</h3>
+    <ul class="list-reset pool">
+      <li *ngFor="let h of horses()">
+        <span class="chip" [ngStyle]="{background: h.color}">{{ h?.name }}</span>
+        <span class="small">COND {{ h?.condition }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="center panel track-shell">
+    <app-track
+      *ngIf="activeRound() as round"
+      [round]="round"
+      [horses]="horses()"
+      [positions]="positions()"
+      (trackWidthChanged)="onResizeTrackWidth($event)">
+    </app-track>
+  </section>
+
+  <section class="right panel">
+    <app-results [rounds]="rounds()" [horses]="horses()"></app-results>
+  </section>
+</main>

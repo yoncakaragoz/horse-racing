@@ -1,0 +1,26 @@
+<ng-container *ngFor="let r of rounds">
+  <div *ngIf="r.results?.length" class="mb-3">
+    <div class="fw-bold text-white mb-1">Round {{ r?.id }} · {{ r?.distance }} m</div>
+
+    <div class="table-responsive">
+      <table class="table table-dark table-striped table-sm align-middle mb-0">
+        <thead>
+          <tr><th style="width:3rem">#</th><th>Horse</th><th class="text-end" style="width:8rem">Time</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of r.results">
+            <td>
+              <span class="badge rounded-pill text-bg-primary fw-bold">{{ row?.rank }}</span>
+            </td>
+            <td>
+              <span class="chip me-2" [ngStyle]="{background: getHorseColor(row.horseId)}">H</span>
+              {{ getHorseName(row?.horseId) }}
+            </td>
+            <td class="text-end">{{ row?.timeMs | number: '1.0-0' }} ms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</ng-container>

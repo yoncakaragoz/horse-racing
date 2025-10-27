@@ -1,0 +1,28 @@
+.round-banner {
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 10px 12px; 
+  border-radius: 10px; 
+  margin-bottom: var(--space-2);
+}
+
+.track {
+  position: relative; 
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius); 
+  padding-left: 60px; 
+  overflow: hidden;
+  min-height: 420px;
+  padding-left: 0;
+}
+
+
+.finish-line {
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  height: 100%; 
+  width: 12px;
+  background: repeating-linear-gradient(45deg, #fff 0 6px, #000 6px 12px);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.35));
+}

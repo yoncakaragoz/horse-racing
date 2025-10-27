@@ -1,0 +1,39 @@
+.app-header {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+
+  .title { 
+    display: grid; 
+    gap: 4px; 
+  }
+
+  .pool { 
+    display: grid; 
+    gap: var(--space-1); 
+    margin-top: var(--space-2); 
+  }
+
+  .pool li { 
+    display: flex; 
+    align-items: center; 
+    gap: var(--space-1); }
+}
+
+
+.track-shell { 
+  position: relative; 
+}
+
+.controls-overlay {
+  position: absolute;
+  inset: 0; /* top, right, bottom, left = 0 */
+  z-index: 5;
+  pointer-events: none; 
+
+  app-control-panel {
+    pointer-events: all;
+  }
+}

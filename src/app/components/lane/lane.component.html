@@ -1,0 +1,20 @@
+<div
+  class="lane d-flex align-items-center position-relative border-bottom border-secondary-subtle py-2"
+  [attr.aria-label]="aria"
+  [style.--lane-color]="color">
+
+  <span
+    class="lane-number badge rounded-pill text-white fw-bold me-2 ms-2 d-inline-flex justify-content-center align-items-center">
+    {{ laneNumber }}
+  </span>
+
+  <div
+    class="horse-sprite position-absolute"
+    [ngStyle]="{ transform: 'translateX(' + xPx + 'px)' }">
+  </div>
+
+  <div class="info position-absolute d-inline-flex align-items-center gap-2">
+    <span class="fw-bold">{{ name }}</span>
+    <small class="text-secondary">({{ condition }})</small>
+  </div>
+</div>

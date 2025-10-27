@@ -1,0 +1,20 @@
+<div class="d-flex align-items-center gap-2 flex-wrap">
+  <button class="btn btn-outline-light btn-sm" (click)="generate.emit()" [disabled]="running">Generate</button>
+  <button class="btn btn-primary btn-sm" (click)="start.emit()" [disabled]="running || !canStart">Start</button>
+
+  <ng-container *ngIf="running">
+    <button class="btn btn-warning btn-sm text-dark" *ngIf="!paused" (click)="pause.emit()">Pause</button>
+    <button class="btn btn-success btn-sm" *ngIf="paused" (click)="resume.emit()">Resume</button>
+  </ng-container>
+
+  <button class="btn btn-outline-secondary btn-sm" (click)="reset.emit()">Reset</button>
+
+  <span class="badge ms-2"
+        [ngClass]="{
+          'text-bg-success': running && !paused,
+          'text-bg-warning text-dark': running && paused,
+          'text-bg-secondary': !running
+        }">
+    {{ running ? (paused ? 'Paused' : 'Running') : 'Idle' }}
+  </span>
+</div>

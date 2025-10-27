@@ -1,0 +1,25 @@
+.lane {
+  height: 70px;
+
+  &-number{
+    width: 30px; 
+    height: 30px;
+    background: color-mix(in oklab, var(--lane-color) 65%, #0b1020 45%) !important;
+  }
+}
+
+.horse-sprite {
+  left: 30px;
+  top: 0px;
+  width: 100px;
+  height: 50px;
+  background-image: url(/assets/horse-run.png);
+  background-size: auto 56px;
+  animation: run-steps 0.8s steps(8) infinite;
+}
+
+.info {
+  left: 60px;
+  top: 50px;
+  font-size: 0.7rem;
+}

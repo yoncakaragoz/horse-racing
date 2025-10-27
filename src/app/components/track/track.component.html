@@ -1,0 +1,12 @@
+<header class="round-banner h2">Round {{ round?.id }} · {{ round?.distance }} m</header>
+
+<div #track class="track">
+  <app-lane *ngFor="let id of round?.participants; index as i; trackBy: trackById"
+            [laneNumber]="i + 1"
+            [name]="getName(id)"
+            [color]="getColor(id)"
+            [condition]="getCondition(id)"
+            [xPx]="positions[id] || 0">
+  </app-lane>
+  <div class="finish-line"></div>
+</div>
