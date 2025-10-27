@@ -1,6 +1,8 @@
-<header class="app-header panel">
-  <div class="title">
-    <h1 class="h1">Horse Racing</h1>
+
+
+<header class="app-header panel container-fluid py-3">
+  <div class="d-flex justify-content-between">
+    <h1 class="h1 m-0">Horse Racing</h1>
     <div class="controls-overlay d-flex justify-content-center align-items-center">
       <app-control-panel
         [running]="running()"
@@ -16,28 +18,36 @@
   </div>
 </header>
 
-<main class="container">
-  <section class="left panel">
-    <h3 class="h2">Horse List</h3>
-    <ul class="list-reset pool">
-      <li *ngFor="let h of horses()">
-        <span class="chip" [ngStyle]="{background: h.color}">{{ h?.name }}</span>
-        <span class="small">COND {{ h?.condition }}</span>
-      </li>
-    </ul>
-  </section>
+<main class="container-fluid py-3">
+  <div class="row g-3">
+    <section class="col-12 col-lg-3">
+      <div class="panel h-100">
+        <h3 class="h2">Horse List</h3>
+        <ul class="list-unstyled pool">
+          <li *ngFor="let h of horses()" class="mb-2 d-flex align-items-center gap-2">
+            <span class="chip" [ngStyle]="{background: h.color}">{{ h?.name }}</span>
+            <span class="small">COND {{ h?.condition }}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-  <section class="center panel track-shell">
-    <app-track
-      *ngIf="activeRound() as round"
-      [round]="round"
-      [horses]="horses()"
-      [positions]="positions()"
-      (trackWidthChanged)="onResizeTrackWidth($event)">
-    </app-track>
-  </section>
+    <section class="col-12 col-lg-6">
+      <div class="panel track-shell h-100">
+        <app-track
+          *ngIf="activeRound() as round"
+          [round]="round"
+          [horses]="horses()"
+          [positions]="positions()"
+          (trackWidthChanged)="onResizeTrackWidth($event)">
+        </app-track>
+      </div>
+    </section>
 
-  <section class="right panel">
-    <app-results [rounds]="rounds()" [horses]="horses()"></app-results>
-  </section>
+    <section class="col-12 col-lg-3">
+      <div class="panel h-100">
+        <app-results [rounds]="rounds()" [horses]="horses()"></app-results>
+      </div>
+    </section>
+  </div>
 </main>
