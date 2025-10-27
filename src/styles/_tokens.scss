@@ -1,0 +1,27 @@
+:root {
+
+  --bg-0: #0b1020;
+  --panel-bg: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  --panel-border: rgba(255,255,255,.10);
+  --text-1: #e5e7eb;
+  --text-2: #cbd5e1;
+
+  --elev-1: 0 10px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.05);
+
+  --radius: 16px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 14px;
+  --fs-lg: 16px;
+  --fs-xl: 18px;
+  --fs-2xl: 22px;
+
+  --bp-sm: 640px;
+  --bp-md: 900px;
+  --bp-lg: 1200px;
+}

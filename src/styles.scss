@@ -1,0 +1,53 @@
+@use './styles/_tokens.scss';
+@use 'bootstrap/dist/css/bootstrap.min.css';
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-0);
+  color: var(--text-1);
+  font-size: var(--fs-lg);
+}
+
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--elev-1);
+  backdrop-filter: blur(6px);
+}
+
+.subtle {
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+}
+
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.small {
+  font-size: var(--fs-sm);
+  opacity: 0.85;
+}
